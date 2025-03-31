@@ -20,7 +20,7 @@ const testimonials = [
     {
         studentName: "John Blackburn",
         courseName: "Material Engineering",
-        review: "Very poorly organized class. The lecture videos were not helpful, but I did enjoy the material.",
+        review: "Very intense class. The lecture videos were not that helpful, but I did enjoy the material.",
         rating: 2
     },
     ];

@@ -53,7 +53,7 @@ const courses = [
         instructor: "Dr. Kwok",
         description: "Statists, probabilities, and machine learning in python",
         duration: "8 weeks",
-        image: "images/course2.jpg"
+        image: "images/course1.jpg"
     },
     {
         id: 8,
@@ -61,7 +61,7 @@ const courses = [
         instructor: "Dr. Elsabrouty",
         description: "Learn Laplace transforms, differential equations, and calculus",
         duration: "8 weeks",
-        image: "images/course2.jpg"
+        image: "images/course1.jpg"
     },
     {
         id: 9,
@@ -69,7 +69,15 @@ const courses = [
         instructor: "Steve Norman",
         description: "Learn the basics of digital circuitry and logic gates",
         duration: "8 weeks",
-        image: "images/course2.jpg"
+        image: "images/course1.jpg"
+    },
+    {
+        id: 10,
+        name: "Engineering Ethics",
+        instructor: "Bob Bobby",
+        description: "Learn the basics of ethical engineering practices",
+        duration: "8 weeks",
+        image: "images/course1.jpg"
     },
     ];
 
