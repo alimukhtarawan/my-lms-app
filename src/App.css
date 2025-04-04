@@ -188,3 +188,73 @@ button:hover {
   background-color: #f8d7da;
   color: #721c24;
 }
+
+/*Homepage container
+
+/* Container for the login form */
+.nav-item {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}
+
+
+
+/*For the signup boxes*/
+
+.form-input {
+  width: 250px; /* Adjust width */
+  height: 30px; /* Adjust height */
+  background-color: #fff9c4; /* Light yellow */
+  border: 1px solid #ccc; /* Light border */
+  padding: 5px;
+  border-radius: 5px; /* Slightly rounded edges */
+  font-size: 14px; /* Smaller text */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+
+.signup-button {
+  width: 100px;
+  padding: 8px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*error box*/
+
+.error-box {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  background-color: white;  /* Light red background */
+  color: black;  /* Dark red text */
+  border: 1px solid black;  /* Light red border */
+  padding: 10px;
+  margin-top: 20px;  /* Add some space between form and error box */
+  width: 100%;
+  max-width: 400px;  /* Limit the width */
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: auto;  /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: none;  /* Remove default bullets */
+  padding-left: 0;  /* Remove left padding */
+}
+
+ul li {
+  margin-bottom: 10px;  /* Add space between list items */
+  text-align: center;  /* Center text */
+}
