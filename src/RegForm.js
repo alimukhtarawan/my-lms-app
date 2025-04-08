@@ -70,7 +70,7 @@ const RegForm = () => {
   
       if (response.ok) {
         alert('Registration successful!');
-        navigate('/login'); // Redirect to login page
+        navigate('/LoginForm'); // Redirect to login page
       } else {
         setError([data.message || 'Registration failed. Please try again.']); // ✅ Wrap in an array
       }

@@ -4,7 +4,7 @@
       "name": "Web Development",
       "instructor": "Dr. John Smith",
       "description": "Master HTML, CSS, and JavaScript.",
-      "duration": "8 weeks",
+      "duration": "10 weeks",
       "image": "images/course1.jpg"
     },
     {
@@ -20,7 +20,7 @@
       "name": "Discrete Mathematics",
       "instructor": "Thi Din",
       "description": "The theory behind sets, functions, etc.",
-      "duration": "8 weeks",
+      "duration": "12 weeks",
       "image": "images/course1.jpg"
     },
     {
@@ -44,7 +44,7 @@
       "name": "Material Engineering",
       "instructor": "Dr. Phillip Egberts",
       "description": "Composition of materials, structures, and strain",
-      "duration": "8 weeks",
+      "duration": "10 weeks",
       "image": "images/course1.jpg"
     },
     {
@@ -60,7 +60,7 @@
       "name": "Differential Equations",
       "instructor": "Dr. Elsabrouty",
       "description": "Learn Laplace transforms, differential equations, and calculus",
-      "duration": "8 weeks",
+      "duration": "12 weeks",
       "image": "images/course1.jpg"
     },
     {
@@ -76,7 +76,7 @@
       "name": "Engineering Ethics",
       "instructor": "Bob Bobby",
       "description": "Learn the basics of ethical engineering practices",
-      "duration": "8 weeks",
+      "duration": "10 weeks",
       "image": "images/course1.jpg"
     }
   ]
