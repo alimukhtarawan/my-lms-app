@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import courses from './data/courses';
-import testimonials from './data/testimonials';
+//import courses from './data/courses';
+//import testimonials from './data/testimonials';
 
 
 
@@ -10,21 +10,33 @@ function MainSection() {
     const [randomTestimonials, setRandomTestimonials] = useState([]);
 
     useEffect(() => {
-        setFeaturedCourses(courses.sort(() => 0.5 -Math.random()).slice(0, 3));
-        setRandomTestimonials(testimonials.sort(() => 0.5 -Math.random()).slice(0, 2));
+        //setFeaturedCourses(courses.sort(() => 0.5 -Math.random()).slice(0, 3));
+        // Fetch courses
+        fetch('http://127.0.0.1:5000/courses')
+            .then((res) => res.json())
+            .then((data) => {
+                const featured = data.sort(() => 0.5 - Math.random()).slice(0, 3);
+                setFeaturedCourses(featured);
+            })
+            .catch((err) => console.error("Failed to fetch courses:", err));
+         // Fetch testimonials from backend
+        fetch('http://127.0.0.1:5000/testimonials')
+            .then((res) => res.json())
+            .then((data) => setRandomTestimonials(data))
+            .catch((err) => console.error("Failed to fetch testimonials:", err));
     }, []);
 
     const renderStars = (rating) => {
         return [...Array(5)].map((_, i) => (
-            <span key={i} style={{ color: i < rating ? "black" : "lightgray" }}>★</span>
+            <span key={i} style={{ color: i < rating ? "black" : "lightgray", paddingLeft: "30px" }}>★</span>
         ));
     };
 
 
     return (
-        <div>
+        <div classname="mainsection">
             <h2>About LMS</h2>
-            <p>The Learning Management System (LMS) helps students and instructors manage courses, quizzes, and track performance efficiently</p>
+            <p>The Learning Management System (LMS) helps students and instructors manage courses, quizzes, and track performance efficiently.</p>
 
             <p>Key Features:</p>
 
@@ -46,7 +58,7 @@ function MainSection() {
             <div>
             <h2>Testimonials</h2>
             {randomTestimonials.map((testimonial, index) => (
-                <div>
+                <div key={index}>
                     
                     <p>{testimonial.review}</p>
                     <p>{testimonial.studentName}</p>

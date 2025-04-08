@@ -1,9 +1,10 @@
 import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "./AuthContext";
 import AuthMessage from "./AuthMessage";
 import Header from "./Header";
 import Footer from "./Footer";
+
 
 function LoginForm() {
   const { setUser } = useContext(AuthContext); // Access global auth state
@@ -34,17 +35,26 @@ function LoginForm() {
     if (!validateInputs()) return;
 
     try {
-      const response = await fetch("https://jsonplaceholder.typicode.com/users");
-      const users = await response.json();
-
-      const user = users.find((user) => user.username === username && user.email === password);
-      
-      if (user) {
-        setUser(user); // Save user globally
+      //const response = await fetch("https://jsonplaceholder.typicode.com/users");
+      const response = await fetch('http://127.0.0.1:5000/validate-login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
+      });
+     
+      const data = await response.json();
+      console.log("Login Response Data:", data); 
+     
+     // if http response and operation in API was successful
+      if (response.ok && data.success)
+      {
+        setUser(username); // Save user globally
         setMessage("Login successful! Redirecting...");
         setMessageType("success");
-
+        
         setTimeout(() => {
+          localStorage.setItem("studentId", data.student_id);
+          console.log("Student ID saved in localStorage:", data.student_id);
           navigate("/CoursesPage");
         }, 2000);
       } else {
@@ -57,12 +67,13 @@ function LoginForm() {
     }
   };
 
+
   return (
     <div>
       <Header />
       <div className="login-container">
-        <h2>Login</h2>
-        {message && <AuthMessage type={messageType} message={message} />}
+        <h2>LMS Student Login</h2>
+        
         <form onSubmit={handleLogin}>
           <input
             type="text"
@@ -76,8 +87,11 @@ function LoginForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          {message && <AuthMessage type={messageType} message={message} />}
           <button type="submit">Login</button>
           <p className="forgot-password">Forgot Password?</p>
+          <Link to="/SignupPage" className="no-acc">Don't have an account? Sign Up</Link>
+          
         </form>
       </div>
       <Footer />
