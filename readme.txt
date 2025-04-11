@@ -17,3 +17,5 @@ Can use hardcoded users credentials in app.py or sign up with new account
 example of hardcoded cred:
 username: alice123
 password: hashedpassword1
+
+IMPORTANT: MAKE SURE TO RUN FLASK BEFORE DOING npm start 
